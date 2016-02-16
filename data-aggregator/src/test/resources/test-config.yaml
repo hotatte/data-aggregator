@@ -1,0 +1,10 @@
+inputFileName: src/test/resources/test-data.csv
+dimensions:
+ - Target
+ - Region
+ - Category
+measures:
+ Amount: SUM
+ Price: SUM
+filters:
+ Region: JP
