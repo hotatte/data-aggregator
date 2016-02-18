@@ -1,4 +1,4 @@
-inputFileName: src/test/resources/test-data.csv
+inputFileName: src/test/resources/test-nullable-data.csv
 dimensions:
  - Target
  - Region

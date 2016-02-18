@@ -6,9 +6,33 @@ import java.util.Map;
 public class Config {
 	private String inputFileName;
 	private List<String> dimensions;
-	private Map<String, String> measures;
+	private List<MeasureConfig> measures;
 	private Map<String, String> filters;
-
+	
+	public static class MeasureConfig {
+		private String label;
+		private String field;
+		private String aggregation;
+		public String getLabel() {
+			return label;
+		}
+		public void setLabel(String label) {
+			this.label = label;
+		}
+		public String getField() {
+			return field;
+		}
+		public void setField(String field) {
+			this.field = field;
+		}
+		public String getAggregation() {
+			return aggregation;
+		}
+		public void setAggregation(String aggregation) {
+			this.aggregation = aggregation;
+		}
+	}
+	
 	public Config() {
 	}
 
@@ -28,11 +52,11 @@ public class Config {
 		return filters;
 	}
 
-	public Map<String, String> getMeasures() {
+	public List<MeasureConfig> getMeasures() {
 		return measures;
 	}
 
-	public void setMeasures(Map<String, String> measures) {
+	public void setMeasures(List<MeasureConfig> measures) {
 		this.measures = measures;
 	}
 

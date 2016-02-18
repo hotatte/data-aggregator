@@ -22,4 +22,17 @@ public class CsvRecordDaoImplTest {
 
 	}
 
+	@Test
+	public void testNullable() throws IOException {
+		ConfigDao configDao = new YamlConfigDaoImpl("src/test/resources/test-nullable-config.yaml");
+		RecordDao recordDao = new CSVRecordDaoImpl(configDao.loadConfig());
+
+		try (Stream<Record> st = recordDao.stream()) {
+			st.forEach(r -> System.out.println(r));
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
 }

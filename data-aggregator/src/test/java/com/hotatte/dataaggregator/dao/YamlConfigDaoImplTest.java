@@ -19,4 +19,14 @@ public class YamlConfigDaoImplTest {
 		assertThat(config.getDimensions().get(2), is("Category"));
 	}
 
+	@Test
+	public void testNullable() {
+		ConfigDao dao = new YamlConfigDaoImpl("src/test/resources/test-nullable-config.yaml");
+		Config config = dao.loadConfig();
+		
+		assertThat(config.getDimensions().get(0), is("Target"));
+		assertThat(config.getDimensions().get(1), is("Region"));
+		assertThat(config.getDimensions().get(2), is("Category"));
+	}
+
 }
